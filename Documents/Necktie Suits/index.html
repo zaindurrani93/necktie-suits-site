@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NECKTIE | Premium Tailoring</title>
+  <meta
+    name="description"
+    content="NECKTIE Premium Tailoring offers premium tailored suits with a custom fit at an accessible price, starting at $199."
+  >
+  <script>
+    /*
+      BRAND SETTINGS
+      Change these values to update the site's core brand colors in one place.
+    */
+    const BRAND_CONFIG = {
+      colors: {
+        obsidian: "#050608",
+        ink: "#0b1020",
+        navydeep: "#0f1b2f",
+        goldmuted: "#b89a62",
+        goldsoft: "#d6bf91",
+        stonewarm: "#9b927f"
+      }
+    };
+
+    /*
+      PRODUCT SETTINGS
+      Change image URLs and prices here for the homepage product cards.
+    */
+    const FOUNDATION_PRODUCTS = [
+      {
+        name: "Manhattan Navy Suit",
+        priceLabel: "Starting at $199",
+        image: "https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=900&q=80",
+        href: "manhattan-navy-suit.html"
+      },
+      {
+        name: "Executive Charcoal Suit",
+        priceLabel: "Starting at $199",
+        image: "https://images.unsplash.com/photo-1593032465171-8bd8861f2b42?auto=format&fit=crop&w=900&q=80",
+        href: "executive-charcoal-suit.html"
+      },
+      {
+        name: "Metropolitan Grey Suit",
+        priceLabel: "Starting at $199",
+        image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80",
+        href: "metropolitan-grey-suit.html"
+      }
+    ];
+
+    const RIVIERA_PRODUCTS = [
+      {
+        name: "Riviera Linen Suit",
+        priceLabel: "Starting at $229",
+        image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80",
+        href: "riviera-linen-suit.html"
+      },
+      {
+        name: "Milano Olive Suit",
+        priceLabel: "Starting at $229",
+        image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=80",
+        href: "milano-olive-suit.html"
+      }
+    ];
+
+    tailwind = {
+      config: {
+        theme: {
+          extend: {
+            colors: BRAND_CONFIG.colors,
+            fontFamily: {
+              display: ["Georgia", "Times New Roman", "serif"],
+              sans: ["ui-sans-serif", "system-ui", "sans-serif"]
+            },
+            boxShadow: {
+              luxe: "0 24px 80px rgba(0, 0, 0, 0.45)"
+            },
+            letterSpacing: {
+              editorial: "0.28em"
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .section-frame {
+        @apply border border-white/10 bg-white/5 backdrop-blur-sm;
+      }
+
+      .section-title {
+        @apply font-display text-4xl leading-none text-white md:text-5xl;
+      }
+
+      .kicker {
+        @apply text-[0.68rem] font-semibold uppercase tracking-editorial text-goldmuted;
+      }
+    }
+  </style>
+</head>
+<body class="bg-obsidian text-white antialiased">
+  <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(184,154,98,0.14),_transparent_24%),radial-gradient(circle_at_right,_rgba(15,27,47,0.65),_transparent_36%)]"></div>
+
+  <header class="fixed inset-x-0 top-0 z-50">
+    <div class="mx-auto flex max-w-7xl items-center justify-between border-b border-white/10 bg-black/45 px-6 py-5 backdrop-blur-xl md:px-10">
+      <a href="#top" class="brand-lockup">
+        <img src="necktie cropped.png" alt="NECKTIE logo" class="brand-mark-image">
+        <span class="brand-copy">
+          <span class="font-display text-2xl tracking-[0.24em] text-white">NECKTIE</span>
+          <span class="mt-1 text-[0.7rem] uppercase tracking-[0.3em] text-stonewarm">Premium Tailoring</span>
+        </span>
+      </a>
+      <nav class="hidden items-center gap-8 text-sm uppercase tracking-[0.22em] text-stonewarm md:flex">
+        <a href="#foundation" class="transition hover:text-white">Foundation</a>
+        <a href="#riviera" class="transition hover:text-white">Riviera</a>
+        <a href="#process" class="transition hover:text-white">How It Works</a>
+        <a href="#measurements" class="transition hover:text-white">Measurements</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="relative min-h-screen overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1600&q=80"
+        alt="Tailored navy suit on a model"
+        class="absolute inset-0 h-full w-full object-cover"
+      >
+      <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.88)_18%,rgba(0,0,0,0.5)_55%,rgba(4,8,18,0.82)_100%)]"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(184,154,98,0.18),_transparent_28%)]"></div>
+
+      <div class="relative mx-auto flex min-h-screen max-w-7xl items-end px-6 pb-16 pt-32 md:px-10 md:pb-24">
+        <div class="max-w-3xl">
+          <p class="kicker">Luxury Tailoring Reimagined</p>
+          <h1 class="mt-4 max-w-4xl font-display text-5xl leading-[0.94] text-white md:text-7xl">
+            Premium tailored suits with a custom fit at an accessible price
+          </h1>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-stonewarm md:text-xl">
+            Discover elevated menswear with clean structure, refined fabric options, and suits starting at $199.
+          </p>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a
+              href="#foundation"
+              class="inline-flex min-h-14 items-center justify-center rounded-full bg-goldmuted px-8 text-sm font-semibold uppercase tracking-[0.22em] text-black transition hover:bg-goldsoft"
+            >
+              Shop Collection
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-y border-white/10 bg-navydeep/40">
+      <div class="mx-auto grid max-w-7xl gap-px bg-white/10 md:grid-cols-4">
+        <div class="bg-black/60 px-6 py-6 md:px-8">
+          <p class="kicker">Value</p>
+          <p class="mt-3 text-lg font-medium text-white">2-piece suits starting at $199</p>
+        </div>
+        <div class="bg-black/60 px-6 py-6 md:px-8">
+          <p class="kicker">Options</p>
+          <p class="mt-3 text-lg font-medium text-white">3-piece upgrades available</p>
+        </div>
+        <div class="bg-black/60 px-6 py-6 md:px-8">
+          <p class="kicker">Materials</p>
+          <p class="mt-3 text-lg font-medium text-white">Premium fabric tiers</p>
+        </div>
+        <div class="bg-black/60 px-6 py-6 md:px-8">
+          <p class="kicker">Fit</p>
+          <p class="mt-3 text-lg font-medium text-white">Professional measurements required</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="foundation" class="mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-28">
+      <div class="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p class="kicker">Foundation Collection</p>
+          <h2 class="section-title mt-4">Essential tailoring in the brand's core tones.</h2>
+        </div>
+        <p class="max-w-2xl text-base leading-7 text-stonewarm">
+          Built for modern formalwear, the Foundation Collection focuses on versatile navy, charcoal, and grey tailoring with a polished silhouette.
+        </p>
+      </div>
+
+      <div id="foundation-grid" class="grid gap-6 md:grid-cols-3"></div>
+    </section>
+
+    <section id="riviera" class="bg-[linear-gradient(180deg,rgba(15,27,47,0.55),rgba(5,6,8,0.96))]">
+      <div class="mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-28">
+        <div class="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p class="kicker">Riviera Collection</p>
+            <h2 class="section-title mt-4">Seasonal tailoring with lighter attitude.</h2>
+          </div>
+          <p class="max-w-2xl text-base leading-7 text-stonewarm">
+            The Riviera edit brings breathable structure and richer seasonal tones for destination events, spring formals, and statement dressing.
+          </p>
+        </div>
+
+        <div id="riviera-grid" class="grid gap-6 md:grid-cols-2"></div>
+      </div>
+    </section>
+
+    <section id="process" class="mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-28">
+      <div class="mb-12">
+        <p class="kicker">How It Works</p>
+        <h2 class="section-title mt-4">A clear process built around proper fit.</h2>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-3">
+        <article class="section-frame rounded-[2rem] p-8">
+          <p class="text-sm font-semibold uppercase tracking-[0.26em] text-goldmuted">01</p>
+          <h3 class="mt-6 font-display text-3xl text-white">Choose your suit</h3>
+          <p class="mt-4 max-w-sm text-base leading-7 text-stonewarm">
+            Start with the collection that matches your occasion, tone, and fabric preference.
+          </p>
+        </article>
+
+        <article class="section-frame rounded-[2rem] p-8">
+          <p class="text-sm font-semibold uppercase tracking-[0.26em] text-goldmuted">02</p>
+          <h3 class="mt-6 font-display text-3xl text-white">Get professionally measured</h3>
+          <p class="mt-4 max-w-sm text-base leading-7 text-stonewarm">
+            Visit a local tailor or seamstress to ensure precise measurements for your order.
+          </p>
+        </article>
+
+        <article class="section-frame rounded-[2rem] p-8">
+          <p class="text-sm font-semibold uppercase tracking-[0.26em] text-goldmuted">03</p>
+          <h3 class="mt-6 font-display text-3xl text-white">Made to your measurements</h3>
+          <p class="mt-4 max-w-sm text-base leading-7 text-stonewarm">
+            Your suit is produced to the measurement profile you provide for a more custom result.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="measurements" class="border-y border-white/10 bg-navydeep/35">
+      <div class="mx-auto grid max-w-7xl gap-8 px-6 py-20 md:grid-cols-[1.1fr_0.9fr] md:px-10 md:py-28">
+        <div>
+          <p class="kicker">Measurements</p>
+          <h2 class="section-title mt-4">Professional measurements are required for every order.</h2>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-stonewarm">
+            To achieve the fit standard of NECKTIE Premium Tailoring, customers must visit a local tailor for measurements. This keeps the process accurate and helps your final garment feel intentional from shoulder to hem.
+          </p>
+        </div>
+
+        <div class="section-frame rounded-[2rem] p-8">
+          <p class="text-sm uppercase tracking-[0.24em] text-goldmuted">Before ordering</p>
+          <p class="mt-4 text-base leading-7 text-stonewarm">
+            Download our measurement sheet, take it to a trusted tailor, then upload the completed measurements to begin production.
+          </p>
+          <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+            <a
+              href="measurement-guide.html"
+              class="inline-flex min-h-14 items-center justify-center rounded-full border border-goldmuted/40 bg-goldmuted px-6 text-sm font-semibold uppercase tracking-[0.18em] text-black transition hover:bg-goldsoft"
+            >
+              Download Measurement Sheet
+            </a>
+            <a
+              href="measurement-guide.html"
+              class="inline-flex min-h-14 items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-white/10"
+            >
+              Upload Measurements
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mx-auto max-w-7xl px-6 py-12 md:px-10">
+    <div class="flex flex-col gap-8 border-t border-white/10 pt-10 md:flex-row md:items-end md:justify-between">
+      <div>
+        <p class="font-display text-3xl tracking-[0.2em] text-white">NECKTIE</p>
+        <p class="mt-2 text-xs uppercase tracking-[0.28em] text-stonewarm">Premium Tailoring</p>
+      </div>
+
+      <nav class="flex flex-wrap gap-6 text-sm uppercase tracking-[0.2em] text-stonewarm">
+        <a href="#top" class="transition hover:text-white">Home</a>
+        <a href="#foundation" class="transition hover:text-white">Foundation</a>
+        <a href="#riviera" class="transition hover:text-white">Riviera</a>
+        <a href="#process" class="transition hover:text-white">How It Works</a>
+        <a href="#measurements" class="transition hover:text-white">Measurements</a>
+      </nav>
+
+      <a href="mailto:hello@necktietailoring.com" class="text-sm text-goldmuted transition hover:text-goldsoft">
+        hello@necktietailoring.com
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    function renderProductCard(product, categoryLabel, imageHeightClass) {
+      return `
+        <article class="section-frame overflow-hidden rounded-[2rem] shadow-luxe">
+          <img
+            src="${product.image}"
+            alt="${product.name}"
+            class="${imageHeightClass} w-full object-cover"
+          >
+          <div class="p-6">
+            <p class="kicker">${categoryLabel}</p>
+            <h3 class="mt-3 font-display text-3xl text-white">${product.name}</h3>
+            <p class="mt-4 text-sm uppercase tracking-[0.22em] text-goldmuted">${product.priceLabel}</p>
+            <a href="${product.href}" class="mt-6 inline-flex text-sm uppercase tracking-[0.2em] text-stonewarm transition hover:text-white">View Product</a>
+          </div>
+        </article>
+      `;
+    }
+
+    document.getElementById("foundation-grid").innerHTML = FOUNDATION_PRODUCTS
+      .map((product) => renderProductCard(product, "Foundation", "h-96"))
+      .join("");
+
+    document.getElementById("riviera-grid").innerHTML = RIVIERA_PRODUCTS
+      .map((product) => renderProductCard(product, "Seasonal", "h-[28rem]"))
+      .join("");
+  </script>
+</body>
+</html>
