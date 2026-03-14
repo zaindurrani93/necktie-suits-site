@@ -82,24 +82,34 @@
         }
       }
     };
-  </script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css">
-  <style type="text/tailwindcss">
-    @layer utilities {
-      .section-frame {
-        @apply border border-white/10 bg-white/5 backdrop-blur-sm;
-      }
+ <style>
+.section-frame {
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(4px);
+}
 
-      .section-title {
-        @apply font-display text-4xl leading-none text-white md:text-5xl;
-      }
+.section-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.25rem;
+  line-height: 1;
+  color: white;
+}
 
-      .kicker {
-        @apply text-[0.68rem] font-semibold uppercase tracking-editorial text-goldmuted;
-      }
-    }
-  </style>
+.kicker {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: #b89a62;
+}
+
+@media (min-width:768px){
+  .section-title{
+    font-size:3rem;
+  }
+}
+</style>
 </head>
 <body class="bg-obsidian text-white antialiased">
   <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(184,154,98,0.14),_transparent_24%),radial-gradient(circle_at_right,_rgba(15,27,47,0.65),_transparent_36%)]"></div>
