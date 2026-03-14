@@ -1,0 +1,16 @@
+{
+  "name": "necktie-premium-tailoring",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NECKTIE Premium Tailoring website with Stripe Checkout",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "stripe": "^18.1.1"
+  }
+}

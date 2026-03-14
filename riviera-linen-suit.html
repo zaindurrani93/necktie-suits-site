@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riviera Linen Suit | NECKTIE</title>
+  <meta
+    name="description"
+    content="Shop the Riviera Linen Suit from NECKTIE Premium Tailoring."
+  >
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: "#050608",
+            navydeep: "#0f1b2f",
+            goldmuted: "#b89a62",
+            goldsoft: "#d6bf91",
+            stonewarm: "#9b927f"
+          },
+          fontFamily: {
+            display: ["Georgia", "Times New Roman", "serif"],
+            sans: ["ui-sans-serif", "system-ui", "sans-serif"]
+          },
+          boxShadow: {
+            luxe: "0 24px 80px rgba(0, 0, 0, 0.45)"
+          },
+          letterSpacing: {
+            editorial: "0.28em"
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .section-frame {
+        @apply border border-white/10 bg-white/5 backdrop-blur-sm;
+      }
+      .kicker {
+        @apply text-[0.68rem] font-semibold uppercase tracking-editorial text-goldmuted;
+      }
+    }
+  </style>
+</head>
+<body class="bg-obsidian text-white antialiased">
+  <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(184,154,98,0.14),_transparent_24%),radial-gradient(circle_at_right,_rgba(15,27,47,0.65),_transparent_36%)]"></div>
+  <header class="border-b border-white/10 bg-black/45 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-10">
+      <a href="index.html" class="brand-lockup">
+        <img src="necktie cropped.png" alt="NECKTIE logo" class="brand-mark-image">
+        <span class="brand-copy">
+          <span class="font-display text-2xl tracking-[0.24em] text-white">NECKTIE</span>
+          <span class="mt-1 text-[0.7rem] uppercase tracking-[0.3em] text-stonewarm">Premium Tailoring</span>
+        </span>
+      </a>
+      <a href="index.html#riviera" class="text-sm uppercase tracking-[0.22em] text-stonewarm transition hover:text-white">Back to Collection</a>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-7xl px-6 py-12 md:px-10 md:py-20">
+    <div class="grid gap-8 md:grid-cols-[1.05fr_0.95fr] md:items-start">
+      <div class="section-frame overflow-hidden rounded-[2rem] shadow-luxe">
+        <img
+          src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80"
+          alt="Riviera Linen Suit"
+          class="h-full min-h-[32rem] w-full object-cover"
+        >
+      </div>
+
+      <div class="section-frame rounded-[2rem] p-8 md:p-10">
+        <p class="kicker">Riviera Collection</p>
+        <h1 class="mt-4 font-display text-5xl leading-none text-white">Riviera Linen Suit</h1>
+        <p class="mt-5 text-sm uppercase tracking-[0.24em] text-goldmuted">Starting at $199</p>
+        <p class="mt-8 max-w-2xl text-lg leading-8 text-stonewarm">
+          The Riviera Linen Suit delivers relaxed seasonal elegance with breathable tailoring, soft structure, and premium construction that keeps the look sharp while feeling lighter for warmer settings.
+        </p>
+
+        <div class="mt-10 space-y-4">
+          <label class="block">
+            <span class="mb-3 block text-sm uppercase tracking-[0.2em] text-stonewarm">Configuration</span>
+            <select data-option-select class="w-full rounded-2xl border border-white/10 bg-black/50 px-5 py-4 text-white outline-none transition focus:border-goldmuted">
+              <option value="2-piece">2 piece</option>
+              <option value="3-piece-upgrade">3 piece upgrade</option>
+              <option value="premium-fabric-upgrade">premium fabric upgrade</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="mt-10 flex flex-wrap gap-4">
+          <button
+            type="button"
+            data-checkout-button
+            data-product="riviera-linen-suit"
+            class="inline-flex min-h-14 items-center justify-center rounded-full bg-goldmuted px-8 text-sm font-semibold uppercase tracking-[0.22em] text-black transition hover:bg-goldsoft"
+          >
+            Buy with Stripe
+          </button>
+          <a
+            href="measurement-guide.html"
+            class="inline-flex min-h-14 items-center justify-center rounded-full border border-white/15 bg-white/5 px-8 text-sm font-semibold uppercase tracking-[0.22em] text-white transition hover:bg-white/10"
+          >
+            Continue to Measurements
+          </a>
+        </div>
+        <p data-checkout-error class="mt-4 min-h-6 text-sm text-[#f0b6b6]"></p>
+      </div>
+    </div>
+  </main>
+  <script src="checkout.js"></script>
+</body>
+</html>
