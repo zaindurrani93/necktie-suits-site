@@ -118,8 +118,8 @@
 <body class="bg-obsidian text-white antialiased">
   <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(184,154,98,0.14),_transparent_24%),radial-gradient(circle_at_right,_rgba(15,27,47,0.65),_transparent_36%)]"></div>
 
-  <header class="fixed inset-x-0 top-0 z-50">
-    <div class="mx-auto flex max-w-7xl items-center justify-between border-b border-white/10 bg-black/45 px-6 py-5 backdrop-blur-xl md:px-10">
+  <header id="site-header" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
+    <div id="site-header-inner" class="mx-auto flex max-w-7xl items-center justify-between border-b border-white/10 bg-black/30 px-6 py-5 backdrop-blur-md transition-all duration-300 md:px-10">
       <a href="#top" class="brand-lockup">
         <img src="./necktie%20cropped.png" alt="NECKTIE logo" class="h-16 w-auto">
         <span class="brand-copy">
@@ -149,18 +149,18 @@
       <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.88)_18%,rgba(0,0,0,0.5)_55%,rgba(4,8,18,0.82)_100%)]"></div>
       <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(184,154,98,0.18),_transparent_28%)]"></div>
 
-      <div class="relative mx-auto flex min-h-screen max-w-7xl items-end px-6 pb-16 pt-32 md:px-10 md:pb-24">
-        <div class="max-w-3xl">
+      <div class="relative mx-auto flex min-h-screen max-w-7xl items-center px-6 pt-28 pb-16 md:px-10 md:pt-32 md:pb-24">
+       <div class="max-w-2xl">
           <p class="kicker">Luxury Tailoring Reimagined</p>
           <h1 class="mt-4 max-w-3xl font-display text-4xl leading-tight text-white md:text-5xl">
             Premium tailored suits with a custom fit at an accessible price
           </h1>
-          <p class="mt-6 max-w-2xl text-lg leading-8 text-stonewarm md:text-xl">
+          <p class="mt-6 max-w-xl text-lg leading-8 text-stonewarm md:text-xl">
             Discover elevated menswear with clean structure, refined fabric options, and suits starting at $199.
           </p>
           <div class="mt-10 flex flex-wrap gap-4">
             <a
-              href="#foundation"
+              href="suits.html"
               class="inline-flex min-h-14 items-center justify-center rounded-full bg-goldmuted px-8 text-sm font-semibold uppercase tracking-[0.22em] text-black transition hover:bg-goldsoft"
             >
               Shop Collection
@@ -296,12 +296,13 @@
       </div>
 
       <nav class="flex flex-wrap gap-6 text-sm uppercase tracking-[0.2em] text-stonewarm">
-        <a href="#top" class="transition hover:text-white">Home</a>
-        <a href="#foundation" class="transition hover:text-white">Foundation</a>
-        <a href="#riviera" class="transition hover:text-white">Riviera</a>
-        <a href="#process" class="transition hover:text-white">How It Works</a>
-        <a href="#measurements" class="transition hover:text-white">Measurements</a>
-      </nav>
+  <a href="index.html" class="transition hover:text-white">Home</a>
+  <a href="suits.html" class="transition hover:text-white">Suits</a>
+  <a href="how-it-works.html" class="transition hover:text-white">How It Works</a>
+  <a href="measurement-guide.html" class="transition hover:text-white">Measurements</a>
+  <a href="about.html" class="transition hover:text-white">About</a>
+  <a href="contact.html" class="transition hover:text-white">Contact</a>
+</nav>
 
       <a href="mailto:hello@necktietailoring.com" class="text-sm text-goldmuted transition hover:text-goldsoft">
         hello@necktietailoring.com
@@ -312,13 +313,15 @@
   <script>
     function renderProductCard(product, categoryLabel, imageHeightClass) {
       return `
-        <article class="section-frame overflow-hidden rounded-[2rem] shadow-luxe">
-          <img
-            src="${product.image}"
-            alt="${product.name}"
-            class="${imageHeightClass} w-full object-cover"
-          >
-          <div class="p-6">
+  <article class="section-frame group overflow-hidden rounded-[2rem] shadow-luxe transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_90px_rgba(0,0,0,0.55)]">
+    <div class="overflow-hidden">
+      <img
+        src="${product.image}"
+        alt="${product.name}"
+        class="${imageHeightClass} w-full object-cover transition-transform duration-700 group-hover:scale-105"
+      >
+    </div>
+    <div class="p-6">
             <p class="kicker">${categoryLabel}</p>
             <h3 class="mt-3 font-display text-3xl text-white">${product.name}</h3>
             <p class="mt-4 text-sm uppercase tracking-[0.22em] text-goldmuted">${product.priceLabel}</p>
@@ -335,6 +338,19 @@
     document.getElementById("riviera-grid").innerHTML = RIVIERA_PRODUCTS
       .map((product) => renderProductCard(product, "Seasonal", "h-[28rem]"))
       .join("");
+window.addEventListener("scroll", () => {
+  const headerInner = document.getElementById("site-header-inner");
+  if (!headerInner) return;
+
+  if (window.scrollY > 40) {
+    headerInner.classList.remove("bg-black/30", "backdrop-blur-md");
+    headerInner.classList.add("bg-black/70", "backdrop-blur-xl", "shadow-2xl");
+  } else {
+    headerInner.classList.remove("bg-black/70", "backdrop-blur-xl", "shadow-2xl");
+    headerInner.classList.add("bg-black/30", "backdrop-blur-md");
+  }
+});
+
   </script>
 </body>
 </html>
