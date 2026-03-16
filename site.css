@@ -73,6 +73,71 @@ button, input, textarea { font: inherit; }
   min-height: 84px;
 }
 
+.desktop-nav {
+  display: flex;
+}
+
+.mobile-menu {
+  display: none;
+  width: 100%;
+}
+
+.mobile-menu summary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 1px solid rgba(184, 154, 98, 0.24);
+  border-radius: 999px;
+  color: var(--text);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  list-style: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.mobile-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-menu summary::after {
+  content: "+";
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.mobile-menu[open] summary::after {
+  content: "\2212";
+}
+
+.mobile-menu-panel {
+  display: grid;
+  gap: 14px;
+  margin-top: 14px;
+  padding: 18px;
+  border: 1px solid rgba(184, 154, 98, 0.16);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(16, 23, 34, 0.96), rgba(10, 13, 18, 0.96));
+  box-shadow: var(--shadow);
+}
+
+.mobile-menu-panel a {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.mobile-menu-panel a:hover {
+  color: var(--text);
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
@@ -337,15 +402,23 @@ button, input, textarea { font: inherit; }
 @media (max-width: 760px) {
   .shell { width: min(calc(100% - 20px), var(--max-width)); }
   .site-header-inner, .section-head, .footer-inner { flex-direction: column; align-items: flex-start; }
+  .site-header-inner { gap: 18px; padding: 16px 0; }
+  .desktop-nav { display: none; }
+  .mobile-menu { display: block; }
   .nav, .footer-nav { gap: 16px; }
   .hero { padding-top: 14px; }
   .hero-frame { min-height: 560px; border-radius: 26px; }
-  .hero-content, .page-hero-content { padding: 96px 24px 32px; }
+  .page-hero { min-height: 400px; }
+  .hero-content, .page-hero-content { padding: 88px 24px 32px; }
   .hero-copy h1 { font-size: 2.5rem; }
+  .page-hero-content h1 { font-size: 2.2rem; }
+  .hero-copy p, .page-hero-content p { font-size: 1rem; line-height: 1.75; }
   .section { padding: 56px 0; }
   .value-grid, .cards-3, .cards-2, .process-grid, .story-grid, .contact-grid, .measurement-grid {
     grid-template-columns: 1fr;
   }
   .card-body h3, .process-card h3, .story-card h3 { font-size: 1.7rem; }
   .button, .button-secondary { width: 100%; }
+  .process-card, .story-card, .measurement-panel, .contact-panel, .panel { padding: 24px; }
+  .footer-contact { font-size: 0.88rem; word-break: break-word; }
 }

@@ -108,9 +108,128 @@
   color: #b89a62;
 }
 
+.mobile-header {
+  display: none;
+}
+
+.mobile-header-button,
+.mobile-header-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  color: #fff;
+  transition: background 200ms ease, border-color 200ms ease, color 200ms ease;
+}
+
+.mobile-header-button:hover,
+.mobile-header-icon:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(184,154,98,0.25);
+  color: #d6bf91;
+}
+
+.mobile-header-button svg,
+.mobile-header-icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.mobile-brand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  text-align: center;
+}
+
+.mobile-brand-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+.mobile-menu-overlay {
+  display: none;
+}
+
+.mobile-menu-overlay.is-open {
+  display: block;
+}
+
+.mobile-menu-panel {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  background:
+    linear-gradient(180deg, rgba(5, 6, 8, 0.98), rgba(10, 13, 20, 0.98));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+
+.mobile-menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.05rem 0;
+  color: #f5f2eb;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: color 200ms ease;
+}
+
+.mobile-menu-link:hover {
+  color: #d6bf91;
+}
+
+.mobile-menu-link + .mobile-menu-link {
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.mobile-menu-link::after {
+  content: "";
+  width: 2.5rem;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(184,154,98,0.95), rgba(184,154,98,0));
+}
+
 @media (min-width:768px){
   .section-title{
     font-size:3rem;
+  }
+}
+
+@media (max-width:767px){
+  #site-header-inner {
+    padding-top: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+    background: transparent;
+    backdrop-filter: none;
+  }
+
+  .brand-lockup {
+    gap: 0.7rem;
+  }
+
+  .brand-lockup img {
+    height: 2rem;
+  }
+
+  .mobile-header {
+    display: block;
+  }
+
+  .brand-copy .text-\[0\.7rem\] {
+    display: none;
   }
 }
 </style>
@@ -120,7 +239,7 @@
 
   <header id="site-header" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
     <div id="site-header-inner" class="mx-auto flex max-w-7xl items-center justify-between border-b border-white/10 bg-black/30 px-6 py-5 backdrop-blur-md transition-all duration-300 md:px-10">
-      <a href="index.html" class="brand-lockup">
+      <a href="index.html" class="brand-lockup hidden md:inline-flex">
         <img src="./necktie%20cropped.png" alt="NECKTIE logo" class="h-16 w-auto">
         <span class="brand-copy">
           <span class="font-display text-2xl tracking-[0.24em] text-white">NECKTIE</span>
@@ -135,7 +254,61 @@
   <a href="about.html" class="transition hover:text-white">About</a>
   <a href="contact.html" class="transition hover:text-white">Contact</a>
 </nav>
+      <div class="mobile-header relative w-full md:hidden">
+        <div class="flex items-center justify-between border-b border-white/10 bg-black/45 py-4 backdrop-blur-xl">
+          <button
+            type="button"
+            id="mobile-menu-toggle"
+            class="mobile-header-button"
+            aria-expanded="false"
+            aria-controls="mobile-menu-overlay"
+            aria-label="Open menu"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+              <path d="M4 7h16"></path>
+              <path d="M4 12h16"></path>
+              <path d="M4 17h16"></path>
+            </svg>
+          </button>
 
+          <a href="index.html" class="mobile-brand" aria-label="NECKTIE home">
+            <span class="mobile-brand-copy">
+              <span class="font-display text-lg tracking-[0.24em] text-white sm:text-xl">NECKTIE</span>
+            </span>
+          </a>
+
+          <div class="flex items-center gap-2">
+            <button
+              type="button"
+              class="mobile-header-icon"
+              aria-label="Search"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="6"></circle>
+                <path d="M20 20l-4.2-4.2"></path>
+              </svg>
+            </button>
+            <a href="suits.html" class="mobile-header-icon" aria-label="Shopping cart">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="20" r="1.25"></circle>
+                <circle cx="18" cy="20" r="1.25"></circle>
+                <path d="M2.5 4h2l2.2 10.2a1 1 0 0 0 1 .8h9.7a1 1 0 0 0 1-.8L20 7H6.2"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div id="mobile-menu-overlay" class="mobile-menu-overlay">
+          <nav class="mobile-menu-panel px-6 py-6" aria-label="Mobile navigation">
+            <a href="index.html" class="mobile-menu-link">Home</a>
+            <a href="suits.html" class="mobile-menu-link">Suits</a>
+            <a href="how-it-works.html" class="mobile-menu-link">How It Works</a>
+            <a href="measurement-guide.html" class="mobile-menu-link">Measurements</a>
+            <a href="about.html" class="mobile-menu-link">About</a>
+            <a href="contact.html" class="mobile-menu-link">Contact</a>
+          </nav>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -152,7 +325,7 @@
       <div class="relative mx-auto flex min-h-screen max-w-7xl items-center px-6 pt-28 pb-16 md:px-10 md:pt-32 md:pb-24">
        <div class="max-w-2xl">
           <p class="kicker">Luxury Tailoring Reimagined</p>
-          <h1 class="mt-4 max-w-3xl font-display text-4xl leading-tight text-white md:text-5xl">
+          <h1 class="mt-4 max-w-3xl font-display text-[2.15rem] leading-tight text-white sm:text-5xl">
             Premium tailored suits with a custom fit at an accessible price
           </h1>
           <p class="mt-6 max-w-xl text-lg leading-8 text-stonewarm md:text-xl">
@@ -351,6 +524,26 @@ window.addEventListener("scroll", () => {
     headerInner.classList.add("bg-black/30", "backdrop-blur-md");
   }
 });
+
+const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+const mobileMenuOverlay = document.getElementById("mobile-menu-overlay");
+
+if (mobileMenuToggle && mobileMenuOverlay) {
+  const setMobileMenuState = (isOpen) => {
+    mobileMenuOverlay.classList.toggle("is-open", isOpen);
+    mobileMenuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    mobileMenuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+  };
+
+  mobileMenuToggle.addEventListener("click", () => {
+    const isOpen = mobileMenuToggle.getAttribute("aria-expanded") === "true";
+    setMobileMenuState(!isOpen);
+  });
+
+  mobileMenuOverlay.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setMobileMenuState(false));
+  });
+}
 
   </script>
 </body>
